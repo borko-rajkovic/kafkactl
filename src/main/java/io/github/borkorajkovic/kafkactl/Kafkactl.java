@@ -1,5 +1,6 @@
 package io.github.borkorajkovic.kafkactl;
 
+import io.github.borkorajkovic.kafkactl.command.CopyOffsetsCommand;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import picocli.CommandLine;
@@ -9,7 +10,8 @@ import picocli.CommandLine.Command;
         name = "kafkactl",
         mixinStandardHelpOptions = true,
         version = "0.1.0",
-        description = "Kafka administration CLI tool"
+        description = "Kafka administration CLI tool",
+        subcommands = {CopyOffsetsCommand.class}
 )
 public class Kafkactl implements Runnable {
 

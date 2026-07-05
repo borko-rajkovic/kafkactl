@@ -19,6 +19,9 @@
     <log4j-core.version>2.26.0</log4j-core.version>
     <log4j-api.version>2.26.0</log4j-api.version>
     <jackson-dataformat-yaml.version>2.22.0</jackson-dataformat-yaml.version>
+    <junit-jupiter.version>5.11.4</junit-jupiter.version>
+    <maven-surefire-plugin.version>3.5.2</maven-surefire-plugin.version>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
 
   <dependencies>
@@ -71,10 +74,24 @@
       <version>${jackson-dataformat-yaml.version}</version>
     </dependency>
 
+    <!-- Tests -->
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter</artifactId>
+      <version>${junit-jupiter.version}</version>
+      <scope>test</scope>
+    </dependency>
+
   </dependencies>
 
   <build>
     <plugins>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>${maven-surefire-plugin.version}</version>
+      </plugin>
 
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
